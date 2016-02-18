@@ -10,7 +10,8 @@
 	<version>1.0-SNAPSHOT</version>
 	<modules>
 		<module>tagbar-2-section-1</module>
-		<module>tagbar-2-section-5</module>
+		<module>tagbar-2-section-2</module>
+		<module>tagbar-2-section-3</module>
 	</modules>
 
 	<properties>
