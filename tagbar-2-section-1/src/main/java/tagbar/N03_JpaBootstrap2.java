@@ -16,7 +16,7 @@ import java.util.*;
  * http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-hibernate
  * @see PersistenceUnitInfoImpl
  */
-public class JpaBootstrap2 {
+public class N03_JpaBootstrap2 {
 
 	public static void main(String[] args) {
 		String persistenceUnitName = "jpa-example";

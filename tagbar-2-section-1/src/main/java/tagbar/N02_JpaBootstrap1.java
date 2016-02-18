@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
  *
  * http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-compliant
  */
-public class JpaBootstrap1 {
+public class N02_JpaBootstrap1 {
 
 	public static void main(String[] args) {
 		// META-INF/persistence.xml から設定をロード

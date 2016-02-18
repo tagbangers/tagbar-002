@@ -16,7 +16,7 @@ import org.hibernate.dialect.H2Dialect;
  *
  * http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#bootstrap-native
  */
-public class NativeBootstrap {
+public class N01_NativeBootstrap {
 
 	public static void main(String[] args) {
 		StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
@@ -33,7 +33,6 @@ public class NativeBootstrap {
 		Metadata metadata = new MetadataSources(standardRegistry)
 				.addAnnotatedClass(Event.class)
 				.getMetadataBuilder()
-				// NamingStrategy とは
 				.applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
 				.build();
 
@@ -43,8 +42,8 @@ public class NativeBootstrap {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 
-		session.persist(new Event());
-		session.persist(new Event());
+		session.save(new Event());
+		session.save(new Event());
 
 		session.getTransaction().commit();
 		session.close();

@@ -1,22 +1,22 @@
 # TagBar 2
 
-## Hello Hibernate!
+## 1. Hello Hibernate!
 
 1. ネイティブブートストラップ
 2. JPA ブートストラップ（persistence.xml あり）
 3. JPA ブートストラップ（persistence.xml なし）
 4. Spring JPA のブートストラップ
 
-## IntelliJ の JPA サポート
+### 1.1. IntelliJ の JPA サポート
 
 1. JPA コンソール
 2. ER ダイアグラム
 
-## エンティティのライフサイクル
+## 2. エンティティのライフサイクル
 
+![ライフサイクル](http://bp2.blogger.com/_ZAzF_V5Np5c/RbcadyCaxTI/AAAAAAAAAAM/p3xRORPddqs/s1600/hibernate-lc.PNG)
 
-
-## いろいろな Query
+## 3. いろいろな Query
 
 1. HQL
 2. JPQL

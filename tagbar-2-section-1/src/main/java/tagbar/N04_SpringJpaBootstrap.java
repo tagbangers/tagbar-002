@@ -22,7 +22,7 @@ import java.util.Map;
  * @see org.springframework.orm.jpa.persistenceunit.SmartPersistenceUnitInfo
  * @see org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider#createContainerEntityManagerFactory(javax.persistence.spi.PersistenceUnitInfo, java.util.Map)
  */
-public class SpringJpaBootstrap {
+public class N04_SpringJpaBootstrap {
 
 	public static void main(String[] args) {
 		HikariConfig config = new HikariConfig();
