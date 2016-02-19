@@ -1,4 +1,4 @@
-package tagbar;
+package tagbar.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -24,11 +24,16 @@ public class Event implements Serializable {
 
 	private String organizer;
 
-	private Date eventDate;
+	private LocalDate date;
 
 	private String place;
 
 	private BigDecimal fee;
 
 	private int capacity;
+
+	@Override
+	public String toString() {
+		return String.format("%d:%s @ %s by %s", id, name, place, organizer);
+	}
 }
