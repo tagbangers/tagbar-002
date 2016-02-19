@@ -44,17 +44,19 @@
 
 ## 7. Hibernate ORM Envers
 
-http://hibernate.org/orm/envers/
+1. Envers を使った監査ログの記録
 
 ## 8. Hibernate Search
 
 1. Hibernate Search による検索
-    1. ユーザー辞書
-    2. 類義語・同義語
+    1. 日本語用トークンナイザー
+    2. ユーザー辞書
+    3. 類義語・同義語
 
 ## 9. 最近のリリースノート
 
-5.0
+### 5.0
+
 http://in.relation.to/2015/08/20/hibernate-orm-500-final-release/
 
 * New bootstrap API
@@ -72,7 +74,8 @@ http://in.relation.to/2015/08/20/hibernate-orm-500-final-release/
 * Work on documentation
 	http://hibernate.org/orm/documentation/5.0/
 
-5.1
+### 5.1
+
 http://in.relation.to/2016/02/10/hibernate-orm-510-final-release/
 
 * Entity joins (or ad hoc joins)
@@ -80,7 +83,6 @@ http://in.relation.to/2016/02/10/hibernate-orm-510-final-release/
 * CDI integration improvements
 * @Embeddables and all null column values
 * Envers audit queries can now refer to to-one associtions
-		
 
 ## 参考
 
