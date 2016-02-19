@@ -1,4 +1,4 @@
-package tagbar;
+package tagbar.support;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
 

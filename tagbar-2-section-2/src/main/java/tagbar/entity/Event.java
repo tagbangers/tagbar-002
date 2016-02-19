@@ -1,4 +1,4 @@
-package tagbar;
+package tagbar.entity;
 
 import lombok.Getter;
 import lombok.Setter;

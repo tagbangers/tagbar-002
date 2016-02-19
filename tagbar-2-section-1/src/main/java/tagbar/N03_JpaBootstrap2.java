@@ -4,7 +4,8 @@ import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
-import sun.security.x509.AVA;
+import tagbar.entity.Event;
+import tagbar.support.PersistenceUnitInfoImpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
