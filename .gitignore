@@ -5,4 +5,4 @@ target/
 .idea
 .sass-cache
 *.iml
-db/
+/db/
