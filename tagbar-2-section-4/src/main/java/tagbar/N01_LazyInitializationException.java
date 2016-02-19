@@ -1,6 +1,7 @@
 package tagbar;
 
 import org.flywaydb.core.Flyway;
+import org.hibernate.LazyInitializationException;
 import tagbar.entity.Employee;
 
 import javax.persistence.EntityManager;
@@ -22,23 +23,24 @@ public class N01_LazyInitializationException {
 
 		entityManager.getTransaction().begin();
 
-		Employee employee = entityManager.createQuery(
-				"select e " +
-						"from Employee e " +
-						"where " +
-						"    e.username = :username",
-				Employee.class)
+		String jpql = "select e from Employee e where e.username = :username";
+		Employee employee = entityManager.createQuery(jpql, Employee.class)
 				.setParameter("username", "ogawa")
 				.getSingleResult();
-
-//		entityManager.persist(new Event());
-//		entityManager.persist(new Event());
 
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		entityManagerFactory.close();
 
-//		System.out.println(employee.getDepartment());
-//		System.out.println(employee.getProjects());
+		try {
+			// Note: フェッチしてない場合は、javassist による偽物？
+			System.out.println(employee.getDepartment().getClass());
+			// Note: フェッチしてない場合は、PersistentBag であり、 ArrayList ではない
+			System.out.println(employee.getProjects().getClass());
+
+			employee.getDepartment().getId();
+		} catch (LazyInitializationException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -2,7 +2,6 @@ package tagbar.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -21,16 +20,8 @@ public class Employee implements Serializable {
 	@NaturalId
 	private String username;
 
-//	@Column(name = "pswd")
-//	@ColumnTransformer(
-//			read = "decrypt( 'AES', '00', pswd  )",
-//			write = "encrypt('AES', '00', ?)"
-//	)
-//	private String password;
-//
-//	private int accessLevel;
-
 	@ManyToOne(fetch = FetchType.LAZY)
+//	@ManyToOne(fetch = FetchType.EAGER)
 	private Department department;
 
 	@ManyToMany(mappedBy = "employees")

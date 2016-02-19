@@ -30,7 +30,9 @@
 ## 4. フェッチとカスケード
 
 1. LazyInitializationException って？
-1. EntityGraph
+    1. FetchType.EAGER
+2. JPQL による動的フェッチ
+1. EntityGraph による動的フェッチ
 
 1. toOne関連におけるoptional=trueの制約
 
