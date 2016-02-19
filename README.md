@@ -35,12 +35,14 @@
     3. PersistentBag
 2. JPQL による動的フェッチ
 3. EntityGraph による動的フェッチ
+4. カスケード
 
 ## 5. 楽観的ロック (Optimistic)　と悲観的ロック (Pessimistic)
 
 
-
 ## 6. Multi-Tenancy
+
+
 
 ## 7. Hibernate ORM Envers
 
