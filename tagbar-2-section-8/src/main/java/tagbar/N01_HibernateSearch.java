@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Hibernate Search による検索
+ *
+ * http://hibernate.org/orm/documentation/
  */
 public class N01_HibernateSearch {
 
