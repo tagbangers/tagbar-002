@@ -29,12 +29,4 @@ public class N02_JPQL {
 
 		entityManager.close();
 	}
-
-	private static DataSource createDataSource() {
-		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:h2:./db/test");
-		config.setUsername("sa");
-		config.setPassword("sa");
-		return new HikariDataSource(config);
-	}
 }
