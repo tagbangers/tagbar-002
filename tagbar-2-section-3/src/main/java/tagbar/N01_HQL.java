@@ -1,5 +1,6 @@
 package tagbar;
 
+import org.flywaydb.core.Flyway;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -16,13 +17,17 @@ import java.util.List;
 public class N01_HQL {
 
 	public static void main(String[] args) {
+		Flyway flyway = new Flyway();
+		flyway.setDataSource("jdbc:h2:./db/section-3", "sa", "sa");
+		flyway.migrate();
+
 		StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
-				.applySetting(AvailableSettings.URL, "jdbc:h2:./db/test")
+				.applySetting(AvailableSettings.URL, "jdbc:h2:./db/section-3")
 				.applySetting(AvailableSettings.USER, "sa")
 				.applySetting(AvailableSettings.PASS, "sa")
 				.applySetting(AvailableSettings.DRIVER, "org.h2.Driver")
 				.applySetting(AvailableSettings.DIALECT, H2Dialect.class)
-				.applySetting(AvailableSettings.HBM2DDL_AUTO, "update")
+				.applySetting(AvailableSettings.HBM2DDL_AUTO, "validate")
 				.applySetting(AvailableSettings.SHOW_SQL, true)
 				.applySetting(AvailableSettings.FORMAT_SQL, true)
 				.build();
@@ -38,27 +43,6 @@ public class N01_HQL {
 
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
-
-		Event event = new Event();
-		event.setName("Tag Bar 1");
-		event.setOrganizer("Tagbangers");
-		event.setPlace("横浜");
-		event.setCapacity(20);
-		session.save(event);
-
-		event = new Event();
-		event.setName("Tag Bar 2");
-		event.setOrganizer("Tagbangers");
-		event.setPlace("渋谷");
-		event.setCapacity(50);
-		session.save(event);
-
-		event = new Event();
-		event.setName("Other Bar");
-		event.setOrganizer("Other company");
-		event.setPlace("横浜");
-		event.setCapacity(30);
-		session.save(event);
 
 		List<Event> events = session.createQuery("from Event event where event.place = :place")
 				.setParameter("place", "横浜")
