@@ -6,7 +6,7 @@ import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
-import tagbar.Event;
+import tagbar.entity.Event;
 
 import java.util.EnumSet;
 

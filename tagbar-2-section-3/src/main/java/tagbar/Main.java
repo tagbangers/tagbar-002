@@ -7,6 +7,8 @@ import org.hibernate.dialect.H2Dialect;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
 import org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager;
+import tagbar.entity.Event;
+import tagbar.entity.QEvent;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
