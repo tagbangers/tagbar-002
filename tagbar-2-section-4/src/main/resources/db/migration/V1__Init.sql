@@ -23,10 +23,12 @@ ALTER TABLE Project_Employee ADD CONSTRAINT FKb9hoqfgcsa2nmlavaxaeid6hp FOREIGN 
 
 
 insert into Department (id) values (1);
+insert into Department (id) values (2);
 
 insert into Employee (id, username, department_id) values (1, 'ogawa', 1);
 insert into Employee (id, username, department_id) values (2, 'yamasaki', 1);
 insert into Employee (id, username, department_id) values (3, 'uchitate', 1);
+insert into Employee (id, username, department_id) values (4, 'sasaki', 2);
 
 insert into Project (id) values (1);
 insert into Project (id) values (2);
@@ -36,4 +38,3 @@ insert into Project_Employee (projects_id, employees_id) values (1, 1);
 insert into Project_Employee (projects_id, employees_id) values (1, 2);
 insert into Project_Employee (projects_id, employees_id) values (2, 1);
 insert into Project_Employee (projects_id, employees_id) values (3, 1);
-

@@ -32,4 +32,9 @@ public class Employee implements Serializable {
 
 	@ManyToMany(mappedBy = "employees")
 	private List<Project> projects = new ArrayList<>();
+
+	@Override
+	public String toString() {
+		return username;
+	}
 }
