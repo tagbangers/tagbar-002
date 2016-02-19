@@ -15,7 +15,7 @@ public class N02_JpaBootstrap1 {
 
 	public static void main(String[] args) {
 		// META-INF/persistence.xml から設定をロード
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-example");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("section-1");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 		entityManager.getTransaction().begin();

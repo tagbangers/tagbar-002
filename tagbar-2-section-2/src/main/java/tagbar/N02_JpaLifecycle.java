@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
 public class N02_JpaLifecycle {
 
 	public static void main(String[] args) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-example");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("section-2");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 		entityManager.getTransaction().begin();

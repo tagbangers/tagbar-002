@@ -21,7 +21,7 @@ public class N01_NativeBootstrap {
 
 	public static void main(String[] args) {
 		StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
-				.applySetting(AvailableSettings.URL, "jdbc:h2:./db/test")
+				.applySetting(AvailableSettings.URL, "jdbc:h2:./db/section-1")
 				.applySetting(AvailableSettings.USER, "sa")
 				.applySetting(AvailableSettings.PASS, "sa")
 				.applySetting(AvailableSettings.DRIVER, "org.h2.Driver")

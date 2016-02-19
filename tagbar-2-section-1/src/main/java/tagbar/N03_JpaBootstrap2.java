@@ -20,13 +20,13 @@ import java.util.*;
 public class N03_JpaBootstrap2 {
 
 	public static void main(String[] args) {
-		String persistenceUnitName = "jpa-example";
+		String persistenceUnitName = "section-1";
 
 		List<String> entityClassNames = new ArrayList<>();
 		entityClassNames.add(Event.class.getCanonicalName());
 
 		Properties properties = new Properties();
-		properties.put(AvailableSettings.URL, "jdbc:h2:./db/test");
+		properties.put(AvailableSettings.URL, "jdbc:h2:./db/section-1");
 		properties.put(AvailableSettings.USER, "sa");
 		properties.put(AvailableSettings.PASS, "sa");
 		properties.put(AvailableSettings.DRIVER, "org.h2.Driver");

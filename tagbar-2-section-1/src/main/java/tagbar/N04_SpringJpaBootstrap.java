@@ -27,7 +27,7 @@ public class N04_SpringJpaBootstrap {
 
 	public static void main(String[] args) {
 		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:h2:./db/test");
+		config.setJdbcUrl("jdbc:h2:./db/section-1");
 		config.setUsername("sa");
 		config.setPassword("sa");
 		DataSource dataSource = new HikariDataSource(config);
