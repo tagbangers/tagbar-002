@@ -13,11 +13,11 @@ import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.dialect.H2Dialect;
 
 /**
- * エンティティのライフサイクル
+ * エンティティのライフサイクル（ネイティブ版）
  *
  * http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#pc
  */
-public class N01_Lifecycle {
+public class N01_NativeLifecycle {
 
 	public static void main(String[] args) {
 		StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
@@ -49,13 +49,14 @@ public class N01_Lifecycle {
 		// Transient -> Persistent
 		session.save(event);
 
-		event.setName("Hello");
-		session.flush();
+//		event.setName("Hello");
+//		session.flush();
 
 		// Persistent -> Detached
-		session.clear();
+		session.evict(event);
 
 		// Detached -> Persistent
+		// Note: lock は JPA では非サポート。EntityManger の merge を使用するしかない
 		session.lock(event, LockMode.NONE);
 
 		// Persistent -> Transient
@@ -64,6 +65,5 @@ public class N01_Lifecycle {
 		session.getTransaction().commit();
 		session.close();
 		sessionFactory.close();
-
 	}
 }
