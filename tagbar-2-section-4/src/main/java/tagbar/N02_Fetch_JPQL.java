@@ -9,11 +9,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- * LazyInitializationException って？
- *
- * @see LazyInitializationException
+ * JPQL による動的フェッチ
  */
-public class N01_LazyInitializationException {
+public class N02_Fetch_JPQL {
 
 	public static void main(String[] args) {
 		Flyway flyway = new Flyway();
@@ -25,27 +23,19 @@ public class N01_LazyInitializationException {
 
 		entityManager.getTransaction().begin();
 
-		String jpql = "select e from Employee e where e.username = :username";
+		String jpql =
+				"select e from Employee e " +
+				"left join fetch e.department " +
+				"left join fetch e.projects " +
+				"where e.username = :username";
 		Employee employee = entityManager.createQuery(jpql, Employee.class)
 				.setParameter("username", "ogawa")
 				.getSingleResult();
-
-//		System.out.println("Department: " + employee.getDepartment().getId());
-//		employee.getProjects().stream().forEach(project -> System.out.println("Project: " + project.getId()));
 
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		entityManagerFactory.close();
 
-		try {
-			// Note: フェッチしてない場合は、javassist による偽物？
-			System.out.println(employee.getDepartment().getClass());
-			// Note: PersistentBag であり、 ArrayList ではない
-			System.out.println(employee.getProjects().getClass());
-
-			System.out.println("Department: " + employee.getDepartment().getId());
-		} catch (LazyInitializationException e) {
-			e.printStackTrace();
-		}
+		System.out.println("Department: " + employee.getDepartment().getId());
 	}
 }

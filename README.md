@@ -31,12 +31,14 @@
 
 1. LazyInitializationException って？
     1. FetchType.EAGER
+    2. javassist
+    3. PersistentBag
 2. JPQL による動的フェッチ
-1. EntityGraph による動的フェッチ
+3. EntityGraph による動的フェッチ
 
-1. toOne関連におけるoptional=trueの制約
+## 5. 楽観的ロック (Optimistic)　と悲観的ロック (Pessimistic)
 
-## 5. 悲観的ロック・楽観的ロック
+
 
 ## 6. Multi-Tenancy
 

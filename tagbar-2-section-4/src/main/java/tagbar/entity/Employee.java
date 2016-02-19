@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NamedEntityGraph(name = "employee.graph",
+		attributeNodes = {
+				@NamedAttributeNode("department"),
+				@NamedAttributeNode("projects"),
+		}
+)
 @Getter
 @Setter
 public class Employee implements Serializable {
