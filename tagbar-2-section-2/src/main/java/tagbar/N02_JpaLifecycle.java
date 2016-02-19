@@ -19,22 +19,27 @@ public class N02_JpaLifecycle {
 
 		// Transient
 		Event event = new Event();
+		System.out.println("New: " + entityManager.contains(event));
 
 		// Transient -> Persistent
 		entityManager.persist(event);
+		System.out.println("EntityManager#persist: " + entityManager.contains(event));
 
 //		event.setName("Hello");
 //		session.flush();
 
 		// Persistent -> Detached
 		entityManager.detach(event);
+		System.out.println("EntityManager#detach: " + entityManager.contains(event));
 
 		// Detached -> Persistent
 		// Note: lock は JPA では非サポート。EntityManger の merge を使用するしかない
 		event = entityManager.merge(event);
+		System.out.println("EntityManager#merge: " + entityManager.contains(event));
 
 		// Persistent -> Transient
 		entityManager.remove(event);
+		System.out.println("EntityManager#remove: " + entityManager.contains(event));
 
 		entityManager.getTransaction().commit();
 		entityManager.close();

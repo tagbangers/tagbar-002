@@ -45,22 +45,27 @@ public class N01_NativeLifecycle {
 
 		// Transient
 		Event event = new Event();
+		System.out.println("New: " + session.contains(event));
 
 		// Transient -> Persistent
 		session.save(event);
+		System.out.println("Session#save: " + session.contains(event));
 
 //		event.setName("Hello");
 //		session.flush();
 
 		// Persistent -> Detached
 		session.evict(event);
+		System.out.println("Session#evict: " + session.contains(event));
 
 		// Detached -> Persistent
 		// Note: lock は JPA では非サポート。EntityManger の merge を使用するしかない
 		session.lock(event, LockMode.NONE);
+		System.out.println("Session#lock: " + session.contains(event));
 
 		// Persistent -> Transient
 		session.delete(event);
+		System.out.println("Session#delete: " + session.contains(event));
 
 		session.getTransaction().commit();
 		session.close();

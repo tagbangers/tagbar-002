@@ -16,6 +16,9 @@
 
 ![ライフサイクル](http://bp2.blogger.com/_ZAzF_V5Np5c/RbcadyCaxTI/AAAAAAAAAAM/p3xRORPddqs/s1600/hibernate-lc.PNG)
 
+1. エンティティのライフサイクル（ネイティブ版）
+2. エンティティのライフサイクル（JPA 版）
+
 ## 3. いろいろな Query
 
 1. HQL
@@ -24,13 +27,14 @@
 4. Querydsl
 5. Specification
 
+## 4. フェッチとカスケード
+
+1. LazyInitializeException
+1. EntityGraph
+
 ## @Converter
 
 ## 悲観的ロック・楽観的ロック
-
-## フェッチとカスケード
-
-EntityGraph
 
 ## toOne関連におけるoptional=trueの制約
 
@@ -47,29 +51,29 @@ http://hibernate.org/orm/envers/
 5.0
 http://in.relation.to/2015/08/20/hibernate-orm-500-final-release/
 
-New bootstrap API
-Spatial/GIS support
-Java 8 support
-Expanded AUTO id generation support
-Naming strategy split
-Attribute Converter support
-Better "bulk id table" support
-Transaction management
-Schema Tooling
-Typed Session API
-Improved OSGi support
-Improved bytecode enhancement capabilities
-Work on documentation
+* New bootstrap API
+* Spatial/GIS support
+* Java 8 support
+* Expanded AUTO id generation support
+* Naming strategy split
+* Attribute Converter support
+* Better "bulk id table" support
+* Transaction management
+* Schema Tooling
+* Typed Session API
+* Improved OSGi support
+* Improved bytecode enhancement capabilities
+* Work on documentation
 	http://hibernate.org/orm/documentation/5.0/
 
 5.1
 http://in.relation.to/2016/02/10/hibernate-orm-510-final-release/
 
-Entity joins (or ad hoc joins)
-load-by-multiple-id API
-CDI integration improvements
-@Embeddables and all null column values
-Envers audit queries can now refer to to-one associtions
+* Entity joins (or ad hoc joins)
+* load-by-multiple-id API
+* CDI integration improvements
+* @Embeddables and all null column values
+* Envers audit queries can now refer to to-one associtions
 		
 
 ## Memo
