@@ -48,6 +48,10 @@ http://hibernate.org/orm/envers/
 
 ## 8. Hibernate Search
 
+1. Hibernate Search による検索
+    1. ユーザー辞書
+    2. 類義語・同義語
+
 ## 9. 最近のリリースノート
 
 5.0
